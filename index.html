@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,11 +33,7 @@
             overflow-x: hidden;
         }
 
-        /* Typography */
-        h1,
-        h2,
-        h3,
-        h4 {
+        h1, h2, h3, h4 {
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 1rem;
@@ -48,7 +43,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Navigation */
         header {
             background-color: rgba(17, 17, 17, 0.9);
             color: white;
@@ -145,7 +139,6 @@
             font-size: 1.5rem;
         }
 
-        /* Hero Section */
         #hero {
             height: 100vh;
             min-height: 800px;
@@ -217,7 +210,6 @@
             animation: fadeInUp 1.2s ease;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             background-color: var(--secondary);
@@ -272,7 +264,6 @@
             background-color: var(--accent);
         }
 
-        /* Section Styling */
         section {
             padding: 8rem 0;
             position: relative;
@@ -310,7 +301,6 @@
             font-size: 1.1rem;
         }
 
-        /* About Section */
         #about {
             background-color: white;
         }
@@ -396,7 +386,6 @@
             transform: translateY(-3px);
         }
 
-        /* Skills Section */
         #skills {
             background-color: #f5f7fa;
         }
@@ -446,7 +435,6 @@
             font-size: 1rem;
         }
 
-        /* Projects Section */
         #projects {
             background-color: white;
         }
@@ -470,8 +458,7 @@
             transition: var(--transition);
         }
 
-        .filter-btn.active,
-        .filter-btn:hover {
+        .filter-btn.active, .filter-btn:hover {
             background-color: var(--secondary);
             color: white;
         }
@@ -585,7 +572,6 @@
             font-weight: 600;
         }
 
-        /* Stats Section */
         #stats {
             background: var(--bg-gradient);
             color: white;
@@ -614,7 +600,6 @@
             opacity: 0.9;
         }
 
-        /* Testimonials Section */
         #testimonials {
             background-color: #f5f7fa;
         }
@@ -684,7 +669,6 @@
             font-size: 0.9rem;
         }
 
-        /* Contact Section */
         #contact {
             background-color: var(--primary);
             color: white;
@@ -783,60 +767,20 @@
             transform: translateY(-5px);
         }
 
-        .contact-form {
+        .contact-email {
             flex: 1;
             background-color: white;
             padding: 2.5rem;
             border-radius: 15px;
             box-shadow: var(--card-shadow);
+            text-align: center;
         }
 
-        .form-group {
-            margin-bottom: 1.8rem;
+        .contact-email p {
+            color: var(--text);
+            margin-bottom: 1.5rem;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.8rem;
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--accent);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(60, 168, 231, 0.2);
-        }
-
-        .form-group textarea {
-            height: 180px;
-            resize: vertical;
-        }
-
-        .contact-form .btn {
-            width: 100%;
-            background-color: var(--secondary);
-            font-size: 1.1rem;
-            padding: 1rem;
-        }
-
-        .contact-form .btn:hover {
-            background-color: var(--accent);
-        }
-
-        /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
@@ -942,49 +886,26 @@
             transform: translateY(-5px);
         }
 
-        /* Animations */
         @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
 
         .floating {
             animation: float 3s ease-in-out infinite;
         }
 
-        /* Responsive Design */
         @media (max-width: 992px) {
-            .about-content {
+            .about-content, .contact-container {
                 flex-direction: column;
             }
-
-            .contact-container {
-                flex-direction: column;
-            }
-
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-
-            .hero-content h2 {
-                font-size: 1.8rem;
-            }
+            .hero-content h1 { font-size: 3rem; }
+            .hero-content h2 { font-size: 1.8rem; }
         }
 
         @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
+            .hamburger { display: block; }
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -998,70 +919,30 @@
                 gap: 2rem;
                 transition: var(--transition);
             }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                margin: 0;
-            }
-
-            .nav-links a {
-                font-size: 1.5rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content h2 {
-                font-size: 1.5rem;
-            }
-
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
+            .nav-links.active { left: 0; }
+            .nav-links li { margin: 0; }
+            .nav-links a { font-size: 1.5rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content h2 { font-size: 1.5rem; }
+            .hero-btns { flex-direction: column; align-items: center; }
+            .section-title h2 { font-size: 2.2rem; }
+            .projects-container { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 576px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-
-            .skill-card {
-                padding: 2rem 1.5rem;
-            }
+            .hero-content h1 { font-size: 2rem; }
+            .hero-content p { font-size: 1.1rem; }
+            .section-title h2 { font-size: 1.8rem; }
+            .skill-card { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
-
 <body>
-    <!-- Navigation -->
     <header id="header">
         <div class="container">
             <nav>
                 <a href="#" class="logo"><i class="fas fa-code"></i>Dumisani<span>Tukula</span></a>
-                <button class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -1073,25 +954,20 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero">
         <div class="container">
             <div class="hero-content">
                 <h1 class="animate__animated animate__fadeInDown">Dumisani Tukula</h1>
-                <h2 class="animate__animated animate__fadeIn animate__delay-1s">Creative Designer & Developer</h2>
-                <p class="animate__animated animate__fadeIn animate__delay-1-5s">I craft digital experiences that tell
-                    stories, solve problems, and create meaningful connections between brands and their audiences.</p>
+                <h2 class="animate__animated animate__fadeIn animate__delay-1s">Creative Designer, Developer & Digital Entrepreneur</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1-5s">Based in Blantyre, Malawi, I craft digital experiences that blend graphic design, front-end development, and innovative web solutions to tell stories and solve real-world problems.</p>
                 <div class="hero-btns">
-                    <a href="#projects" class="btn animate__animated animate__fadeInUp animate__delay-2s">View My
-                        Work</a>
-                    <a href="#contact"
-                        class="btn btn-outline animate__animated animate__fadeInUp animate__delay-2s">Hire Me</a>
+                    <a href="#projects" class="btn animate__animated animate__fadeInUp animate__delay-2s">View My Work</a>
+                    <a href="#contact" class="btn btn-outline animate__animated animate__fadeInUp animate__delay-2s">Hire Me</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container">
             <div class="section-title">
@@ -1100,28 +976,22 @@
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://i.ibb.co/x82XvnkH/USERMAGE.jpg" alt="Dumisani Tukula" class="floating">
+                    <img src="https://i.ibb.co/x82Xvnk/USERIMAGE.jpg" alt="Dumisani Tukula" class="floating">
                 </div>
                 <div class="about-text">
                     <h3>Who Am I?</h3>
-                    <p>Hello! I'm Dumisani Tukula, a passionate Graphic Designer and Web Developer with 2+ years of
-                        professional experience at Dreamland Productionz. I specialize in creating visually stunning
-                        designs and functional websites that help businesses achieve their digital goals.</p>
-                    <p>My journey in design began at 17 when I discovered my love for visual storytelling. Since then,
-                        I've had the privilege of working with diverse clients, from startups to established companies,
-                        helping them bring their visions to life.</p>
-                    <p>When I'm not designing or coding, you can find me making music, capturing moments through
-                        photography, or enjoying quality time with friends and family. I believe in continuous learning
-                        and staying at the forefront of design and technology trends.</p>
-
+                    <p>Hello! I'm Dumisani Tukula, a passionate Graphic Designer, Front-End Developer, and Digital Entrepreneur based in Blantyre, Malawi. With expertise in creating visually stunning designs and functional websites, I specialize in full-stack solutions using technologies like HTML, CSS, JavaScript, Node.js, Express, and MongoDB.</p>
+                    <p>My journey began at 17 with a love for visual storytelling and music creation. I've developed projects like MsikaOnline, an online marketplace, and Dynamité Digital, my professional brand showcasing skills in graphic design and web development. I also enjoy transforming ideas into reality, such as building community organization sites and unique dating platforms with futuristic themes.</p>
+                    <p>When not coding or designing, I'm making music, exploring photography, or collaborating on innovative projects. I believe in continuous learning and leveraging tools like Firebase and Postman to deliver high-quality, SEO-optimized digital experiences.</p>
                     <div class="skills-list">
                         <span class="skill-tag">Graphic Design</span>
+                        <span class="skill-tag">Front-End Development</span>
                         <span class="skill-tag">UI/UX</span>
-                        <span class="skill-tag">Web Development</span>
+                        <span class="skill-tag">Full-Stack Integration</span>
                         <span class="skill-tag">Branding</span>
+                        <span class="skill-tag">Music Creation</span>
                         <span class="skill-tag">Photography</span>
                     </div>
-
                     <a href="#" class="btn">Download CV</a>
                     <a href="#contact" class="btn btn-outline">Hire Me</a>
                 </div>
@@ -1129,7 +999,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
         <div class="container">
             <div class="section-title">
@@ -1140,13 +1009,17 @@
                 <div class="skill-card">
                     <i class="fas fa-paint-brush"></i>
                     <h3>Graphic Design</h3>
-                    <p>Creating visually compelling designs for print and digital media that communicate brand messages
-                        effectively.</p>
+                    <p>Creating visually compelling designs for print and digital media that communicate brand messages effectively.</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-laptop-code"></i>
-                    <h3>Web Development</h3>
-                    <p>Building responsive, interactive websites using modern technologies and best practices.</p>
+                    <h3>Front-End Development</h3>
+                    <p>Building responsive, interactive websites using HTML, CSS, JavaScript, and modern frameworks.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Back-End Development</h3>
+                    <p>Implementing server-side logic with Node.js, Express, and databases like MongoDB for full-stack applications.</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-mobile-alt"></i>
@@ -1155,13 +1028,8 @@
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-bullhorn"></i>
-                    <h3>Brand Identity</h3>
+                    <h3>Branding</h3>
                     <p>Developing cohesive brand systems that establish memorable visual identities.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-camera"></i>
-                    <h3>Photography</h3>
-                    <p>Capturing professional images for commercial use and brand storytelling.</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-music"></i>
@@ -1172,49 +1040,45 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
     <section id="stats">
         <div class="container">
             <div class="stats-container">
                 <div class="stat-item">
-                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-number" data-count="30">0</div>
                     <div class="stat-text">Projects Completed</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="18">0</div>
+                    <div class="stat-number" data-count="20">0</div>
                     <div class="stat-text">Happy Clients</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="2">0</div>
+                    <div class="stat-number" data-count="3">0</div>
                     <div class="stat-text">Years Experience</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="5">0</div>
+                    <div class="stat-number" data-count="7">0</div>
                     <div class="stat-text">Awards Won</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <div class="section-title">
                 <h2>My Projects</h2>
                 <p>A selection of my recent creative work</p>
             </div>
-
             <div class="projects-filter">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="design">Design</button>
                 <button class="filter-btn" data-filter="web">Web</button>
                 <button class="filter-btn" data-filter="branding">Branding</button>
             </div>
-
             <div class="projects-container">
                 <div class="project-card" data-category="web">
                     <div class="project-img">
-                        <img src="https://i.ibb.co/tMg2tdsS/34920064-8249319.jpg" alt="E-Commerce Platform">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="MsikaOnline Marketplace">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#"><i class="fas fa-link"></i></a>
@@ -1223,19 +1087,37 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A full-featured online shopping platform with payment integration and inventory management.
-                        </p>
+                        <h3>MsikaOnline</h3>
+                        <p>An online marketplace platform with frontend and backend integration, including user authentication via Google OAuth.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Full-Stack</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Dynamité Digital Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-link"></i></a>
+                                <a href="#"><i class="fas fa-search"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Dynamité Digital</h3>
+                        <p>A professional website showcasing graphic design, front-end development, and music creation services with a mystical teal theme.</p>
                         <div class="project-tags">
                             <span class="project-tag">Web Development</span>
-                            <span class="project-tag">UI/UX</span>
+                            <span class="project-tag">Graphic Design</span>
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card" data-category="design">
                     <div class="project-img">
-                        <img src="https://i.ibb.co/4nTCgWzk/10175345-4338170.jpg" alt="Health & Fitness App">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Mzimu Love Dating Site">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#"><i class="fas fa-link"></i></a>
@@ -1244,19 +1126,17 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Health & Fitness App</h3>
-                        <p>Mobile application that tracks workouts, nutrition, and provides personalized
-                            recommendations.</p>
+                        <h3>Mzimu Love</h3>
+                        <p>A futuristic Malawian dating website with neon gradients, cultural elements, and smooth animations.</p>
                         <div class="project-tags">
-                            <span class="project-tag">App Design</span>
                             <span class="project-tag">UI/UX</span>
+                            <span class="project-tag">Web Design</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card" data-category="branding">
+                <div class="project-card" data-category="web">
                     <div class="project-img">
-                        <img src="https://i.ibb.co/ZzT6jQrX/6145189-3129743.jpg" alt="Business Analytics Dashboard">
+                        <img src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Youth Focus Community Organization">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#"><i class="fas fa-link"></i></a>
@@ -1265,11 +1145,49 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Business Analytics Dashboard</h3>
-                        <p>Interactive dashboard that visualizes key business metrics and KPIs in real-time.</p>
+                        <h3>Youth Focus Community Organization</h3>
+                        <p>A website for a youth-focused community organization, highlighting events, resources, and engagement tools.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Web Development</span>
+                            <span class="project-tag">Community</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="branding">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1586864388065-4489e88342b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Biomedical Lab Profile">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-link"></i></a>
+                                <a href="#"><i class="fas fa-search"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Biomedical Lab Profile</h3>
+                        <p>Transformed a company profile from dental to biomedical lab focus, updating content, logos, and images for coherence.</p>
                         <div class="project-tags">
                             <span class="project-tag">Branding</span>
-                            <span class="project-tag">Data Viz</span>
+                            <span class="project-tag">Content Adaptation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="design">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1556155099-870a7662039b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="WhatsApp Interface Replica">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-link"></i></a>
+                                <a href="#"><i class="fas fa-search"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>WhatsApp Interface Replica</h3>
+                        <p>An exact replica of the WhatsApp interface with dark theme, responsive layout, and detailed styling.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">UI Design</span>
+                            <span class="project-tag">CSS</span>
                         </div>
                     </div>
                 </div>
@@ -1277,20 +1195,16 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section id="testimonials">
         <div class="container">
             <div class="section-title">
                 <h2>Client Testimonials</h2>
                 <p>What people say about my work</p>
             </div>
-
             <div class="testimonials-container">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>Dumisani transformed our brand identity completely. His attention to detail and creative
-                            vision resulted in a design that perfectly represents our company values. The website he
-                            built has significantly increased our online engagement.</p>
+                        <p>Dumisani transformed our brand identity completely. His attention to detail and creative vision resulted in a design that perfectly represents our company values. The website he built has significantly increased our online engagement.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -1302,11 +1216,38 @@
                         </div>
                     </div>
                 </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Working with Dumisani on our marketplace project was a game-changer. His full-stack expertise and innovative approach delivered a seamless user experience.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe">
+                        </div>
+                        <div class="author-info">
+                            <h4>John Doe</h4>
+                            <p>Founder, Startup Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The futuristic design for our dating site exceeded expectations. Dumisani's blend of cultural elements and modern tech is unmatched.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Smith">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emily Smith</h4>
+                            <p>Marketing Director, LoveCo</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="section-title">
@@ -1316,58 +1257,28 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Let's Connect</h3>
-                    <p>I'm currently available for freelance projects or full-time positions. If you have a project
-                        you'd like to discuss or just want to say hello, feel free to reach out!</p>
+                    <p>I'm currently available for freelance projects or full-time positions. If you have a project you'd like to discuss or just want to say hello, feel free to reach out!</p>
                     <div class="contact-details">
-                        <div>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Blantyre, Malawi</span>
-                        </div>
-                        <div>
-                            <i class="fas fa-envelope"></i>
-                            <span>dumisanitukula@gmail.com</span>
-                        </div>
-                        <div>
-                            <i class="fas fa-phone-alt"></i>
-                            <span>+265 994 768 244</span>
-                        </div>
+                        <div><i class="fas fa-map-marker-alt"></i><span>Blantyre, Malawi</span></div>
+                        <div><i class="fas fa-envelope"></i><span>dumisanitukula@gmail.com</span></div>
+                        <div><i class="fas fa-phone-alt"></i><span>+265 994 768 244</span></div>
                     </div>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/dumisani-tukula-480325357" target="_blank"><i
-                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/dumisani-tukula-480325357" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://x.com/DumisaniTukula" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/dumisanitukula" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/dumisanitukula02" target="_blank"><i
-                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/dumisanitukula" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/dumisanitukula02" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                <div class="contact-email">
+                    <h3 style="color: var(--primary);">Send Me an Email</h3>
+                    <p>Click the button below to open your email client and send a message directly.</p>
+                    <a href="mailto:dumisanitukula@gmail.com" class="btn">Send Email</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1380,10 +1291,10 @@
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/dumisani-tukula-480325357" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/DumisaniTukula" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/dumisanitukula" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/dumisanitukula02" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </div>
                 <div class="copyright">
                     <p>&copy; <span id="year"></span> Dumisani Tukula. All Rights Reserved.</p>
@@ -1392,77 +1303,47 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
     <a href="#hero" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
 
     <script>
-        // Update copyright year automatically
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-
-                    // Close mobile menu if open
                     navLinks.classList.remove('active');
                     hamburger.innerHTML = '<i class="fas fa-bars"></i>';
                 }
             });
         });
 
-        // Mobile menu toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-
-            if (navLinks.classList.contains('active')) {
-                hamburger.innerHTML = '<i class="fas fa-times"></i>';
-            } else {
-                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-            }
+            hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
 
-        // Header scroll effect
         const header = document.getElementById('header');
-
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-
-            // Show/hide back to top button
-            const backToTop = document.getElementById('backToTop');
-            if (window.scrollY > 300) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
-            }
+            header.classList.toggle('scrolled', window.scrollY > 100);
+            document.getElementById('backToTop').classList.toggle('active', window.scrollY > 300);
         });
 
-        // Animated counter for stats
         const counters = document.querySelectorAll('.stat-number');
         const speed = 200;
-
         function animateCounters() {
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-count');
                 const count = +counter.innerText;
                 const increment = target / speed;
-
                 if (count < target) {
                     counter.innerText = Math.ceil(count + increment);
                     setTimeout(animateCounters, 1);
@@ -1472,7 +1353,6 @@
             });
         }
 
-        // Start counter when stats section is in view
         const statsSection = document.getElementById('stats');
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
@@ -1480,77 +1360,39 @@
                 observer.unobserve(statsSection);
             }
         }, { threshold: 0.5 });
-
         observer.observe(statsSection);
 
-        // Project filtering
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
-
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Update active button
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-
                 const filterValue = button.getAttribute('data-filter');
-
-                // Filter projects
                 projectCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    card.style.display = (filterValue === 'all' || card.getAttribute('data-category') === filterValue) ? 'block' : 'none';
                 });
             });
         });
 
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            // Here you would typically send the form data to a server
-            // For demonstration, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
-
-            // Reset form
-            contactForm.reset();
-        });
-
-        // Animation on scroll
         const animateElements = document.querySelectorAll('.about-content, .skill-card, .project-card, .testimonial-card');
-
         const animateOnScroll = () => {
             animateElements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.3;
-
                 if (elementPosition < screenPosition) {
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
                 }
             });
         };
-
-        // Set initial state
         animateElements.forEach(element => {
             element.style.opacity = '0';
             element.style.transform = 'translateY(50px)';
             element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         });
-
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
     </script>
 </body>
-
 </html>
