@@ -1,1421 +1,2675 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dumisani Tukula - Creative Designer, Developer & Digital Entrepreneur based in Blantyre, Malawi. Specializing in graphic design, front-end development, UI/UX, and branding.">
-    <meta name="keywords" content="graphic designer, front-end developer, UI/UX designer, web developer, Malawi, Blantyre">
-    <meta name="author" content="Dumisani Tukula">
-    <title>Dumisani Tukula | Creative Designer & Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #111111;
-            --secondary: #a31313;
-            --light: #f8f9fa;
-            --dark: #222222;
-            --accent: #3ca8e7;
-            --text: #333333;
-            --bg-gradient: linear-gradient(135deg, var(--primary), var(--dark));
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            line-height: 1.7;
-            color: var(--text);
-            background-color: var(--light);
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-        }
-
-        header {
-            background-color: rgba(17, 17, 17, 0.9);
-            color: white;
-            padding: 1.2rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            padding: 0.8rem 0;
-            background-color: rgba(0, 0, 0, 0.95);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo span {
-            color: var(--secondary);
-            margin-left: 0.3rem;
-        }
-
-        .logo i {
-            margin-right: 0.5rem;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-            position: relative;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 1.1rem;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        #hero {
-            height: 100vh;
-            min-height: 800px;
-            display: flex;
-            align-items: center;
-            background: var(--bg-gradient);
-            color: white;
-            text-align: center;
-            padding-top: 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
-            opacity: 0.15;
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(to right, var(--light), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: fadeInDown 1s ease;
-        }
-
-        .hero-content h2 {
-            font-size: 2.2rem;
-            font-weight: 400;
-            margin-bottom: 2rem;
-            color: var(--accent);
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            border: 2px solid var(--accent);
-            border-radius: 50px;
-            animation: fadeIn 1.5s ease;
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            animation: fadeInUp 1.2s ease;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 0.9rem 2.2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
-            z-index: -1;
-        }
-
-        .btn:hover::before {
-            width: 100%;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-        }
-
-        .btn-outline:hover {
-            color: white;
-        }
-
-        .btn-outline::before {
-            background-color: var(--accent);
-        }
-
-        section {
-            padding: 8rem 0;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.8rem;
-            color: var(--secondary);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 1rem;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        .section-title p {
-            max-width: 700px;
-            margin: 1rem auto 0;
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        #about {
-            background-color: white;
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-        }
-
-        .about-img {
-            flex: 1;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transform: rotate(-3deg);
-            transition: var(--transition);
-        }
-
-        .about-img:hover {
-            transform: rotate(0deg);
-        }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-        }
-
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-        }
-
-        .about-text h3::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background-color: var(--accent);
-            bottom: -10px;
-            left: 0;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .skill-tag {
-            background-color: var(--light);
-            color: var(--primary);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .skill-tag:hover {
-            background-color: var(--accent);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        #skills {
-            background-color: #f5f7fa;
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .skill-card {
-            background-color: white;
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            text-align: center;
-            border-bottom: 4px solid transparent;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-bottom-color: var(--accent);
-        }
-
-        .skill-card i {
-            font-size: 3.5rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .skill-card:hover i {
-            transform: scale(1.1);
-            color: var(--accent);
-        }
-
-        .skill-card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        .skill-card p {
-            color: #666;
-            font-size: 1rem;
-        }
-
-        #projects {
-            background-color: white;
-        }
-
-        .projects-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .filter-btn {
-            padding: 0.6rem 1.5rem;
-            background-color: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background-color: var(--secondary);
-            color: white;
-        }
-
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .project-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-img {
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-
-        .project-card:hover .project-img img {
-            transform: scale(1.1);
-        }
-
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
-            display: flex;
-            align-items: flex-end;
-            padding: 2rem;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        .project-info {
-            padding: 2rem;
-        }
-
-        .project-info h3 {
-            margin-bottom: 0.8rem;
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        .project-info p {
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--secondary);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .project-links a:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .project-tag {
-            background-color: var(--light);
-            color: var(--primary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-
-        #stats {
-            background: var(--bg-gradient);
-            color: white;
-            text-align: center;
-        }
-
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-        }
-
-        .stat-item {
-            padding: 2rem;
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--accent);
-        }
-
-        .stat-text {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        #testimonials {
-            background-color: #f5f7fa;
-        }
-
-        .testimonials-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background-color: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            margin: 1rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .testimonial-card::before {
-            content: '\201C';
-            font-size: 5rem;
-            color: var(--accent);
-            opacity: 0.2;
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            line-height: 1;
-        }
-
-        .testimonial-content {
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .author-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-        .author-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .author-info h4 {
-            margin-bottom: 0.3rem;
-            font-size: 1.2rem;
-        }
-
-        .author-info p {
-            margin-bottom: 0;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        #contact {
-            background-color: var(--primary);
-            color: white;
-            position: relative;
-        }
-
-        #contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        #contact .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        #contact .section-title h2 {
-            color: white;
-        }
-
-        #contact .section-title h2::after {
-            background-color: var(--accent);
-        }
-
-        .contact-container {
-            display: flex;
-            gap: 4rem;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-        }
-
-        .contact-info p {
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .contact-details {
-            margin-bottom: 3rem;
-        }
-
-        .contact-details div {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-details i {
-            margin-right: 1.2rem;
-            color: var(--accent);
-            font-size: 1.2rem;
-            width: 20px;
-            text-align: center;
-        }
-
-        .contact-details span, .contact-details a {
-            font-size: 1.1rem;
-            color: white;
-            text-decoration: none;
-        }
-
-        .contact-details a:hover {
-            color: var(--accent);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            background-color: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        .contact-email {
-            flex: 1;
-            background-color: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            text-align: center;
-        }
-
-        .contact-email p {
-            color: var(--text);
-            margin-bottom: 1.5rem;
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 3rem 0 1rem;
-            position: relative;
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-        .footer-logo span {
-            color: var(--accent);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-social a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-
-        .footer-social a:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background-color: var(--accent);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.5rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 999;
-        }
-
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--secondary);
-            transform: translateY(-5px);
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @media (max-width: 992px) {
-            .about-content, .contact-container {
-                flex-direction: column;
-            }
-            .hero-content h1 { font-size: 3rem; }
-            .hero-content h2 { font-size: 1.8rem; }
-        }
-
-        @media (max-width: 768px) {
-            .hamburger { display: block; }
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--dark);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 2rem;
-                transition: var(--transition);
-            }
-            .nav-links.active { left: 0; }
-            .nav-links li { margin: 0; }
-            .nav-links a { font-size: 1.5rem; }
-            .hero-content h1 { font-size: 2.5rem; }
-            .hero-content h2 { font-size: 1.5rem; }
-            .hero-btns { flex-direction: column; align-items: center; }
-            .section-title h2 { font-size: 2.2rem; }
-            .projects-container { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 576px) {
-            .hero-content h1 { font-size: 2rem; }
-            .hero-content p { font-size: 1.1rem; }
-            .section-title h2 { font-size: 1.8rem; }
-            .skill-card { padding: 2rem 1.5rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dumisani Tukula | Founder of Dynamité Graphix & Digital Creator</title>
+
+<meta name="description" content="Dumisani Tukula is a Malawian Graphic Designer, Front-End Developer, AI Solutions Creator and Founder of Dynamité Graphix.">
+<meta name="keywords" content="Dumisani Tukula, Dynamité Graphix, Graphic Designer Malawi, Web Developer Malawi, AI Solutions">
+<meta name="author" content="Dumisani Tukula">
+
+<meta property="og:title" content="Dumisani Tukula | Creative Technologist">
+<meta property="og:description" content="Building digital experiences through design, technology and innovation from Malawi.">
+
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+<style>
+
+:root{
+--black:#050505;
+--dark:#111;
+--card:#181818;
+--red:#b31313;
+--blue:#00bfff;
+--white:#fff;
+--gray:#aaa;
+--gradient:linear-gradient(135deg,#050505,#250000,#001f33);
+}
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+
+section{
+padding:100px 0;
+}
+
+
+h1,h2,h3{
+font-weight:800;
+}
+
+
+p{
+color:#bbb;
+line-height:1.8;
+}
+
+
+/* HEADER */
+
+header{
+
+position:fixed;
+top:0;
+width:100%;
+z-index:999;
+
+background:rgba(5,5,5,.75);
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+height:80px;
+
+}
+
+
+.logo{
+
+font-size:25px;
+font-weight:900;
+color:white;
+text-decoration:none;
+
+}
+
+
+.logo span{
+
+color:var(--red);
+
+}
+
+
+.nav-links{
+
+display:flex;
+gap:35px;
+list-style:none;
+
+}
+
+
+.nav-links a{
+
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+
+}
+
+
+.nav-links a:hover{
+
+color:var(--blue);
+
+}
+
+
+.menu{
+
+display:none;
+font-size:25px;
+cursor:pointer;
+
+}
+
+
+
+/* HERO */
+
+
+#hero{
+
+height:100vh;
+min-height:750px;
+
+display:flex;
+align-items:center;
+
+background:
+linear-gradient(
+rgba(0,0,0,.75),
+rgba(0,0,0,.85)
+),
+url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97")
+center/cover;
+
+position:relative;
+
+}
+
+
+.hero-content{
+
+max-width:900px;
+
+}
+
+
+.hero h1{
+
+font-size:70px;
+line-height:1.1;
+
+background:linear-gradient(
+90deg,
+white,
+var(--blue)
+);
+
+-webkit-background-clip:text;
+color:transparent;
+
+animation:fade 1s;
+
+}
+
+
+.hero h2{
+
+font-size:30px;
+color:var(--red);
+margin:20px 0;
+
+}
+
+
+.hero p{
+
+font-size:18px;
+max-width:700px;
+
+}
+
+
+.btn{
+
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+
+border-radius:50px;
+
+background:var(--red);
+color:white;
+
+text-decoration:none;
+font-weight:700;
+
+transition:.4s;
+
+}
+
+
+.btn:hover{
+
+background:var(--blue);
+transform:translateY(-5px);
+
+}
+
+
+.btn-outline{
+
+background:transparent;
+border:2px solid var(--blue);
+margin-left:15px;
+
+}
+
+
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:none;
+}
+
+}
+
+
+
+/* ABOUT */
+
+
+#about{
+
+background:#0b0b0b;
+
+}
+
+
+.section-title{
+
+text-align:center;
+margin-bottom:60px;
+
+}
+
+
+.section-title h2{
+
+font-size:45px;
+color:var(--blue);
+
+}
+
+
+.about-grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+
+}
+
+
+
+.profile{
+
+width:100%;
+border-radius:20px;
+
+box-shadow:
+0 0 40px rgba(0,191,255,.25);
+
+}
+
+
+
+.about-text h3{
+
+font-size:32px;
+margin-bottom:20px;
+
+}
+
+
+.highlight{
+
+color:var(--red);
+
+}
+
+
+
+/* SERVICES */
+
+
+#services{
+
+background:#050505;
+
+}
+
+
+.service-grid{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.service-card{
+
+background:
+linear-gradient(
+145deg,
+#171717,
+#090909
+);
+
+padding:35px;
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+
+
+.service-card:hover{
+
+transform:translateY(-15px);
+
+border-color:var(--blue);
+
+box-shadow:
+0 15px 40px rgba(0,191,255,.15);
+
+}
+
+
+
+.service-card i{
+
+font-size:45px;
+color:var(--blue);
+margin-bottom:25px;
+
+}
+
+
+.service-card h3{
+
+font-size:25px;
+margin-bottom:15px;
+
+}
+
+
+.tags{
+
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:20px;
+
+}
+
+
+.tag{
+
+background:#222;
+padding:7px 15px;
+border-radius:20px;
+font-size:13px;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:768px){
+
+.menu{
+display:block;
+}
+
+
+.nav-links{
+
+position:absolute;
+top:80px;
+left:-100%;
+
+width:100%;
+height:100vh;
+
+background:#050505;
+
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+transition:.4s;
+
+}
+
+
+.nav-links.active{
+
+left:0;
+
+}
+
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.btn-outline{
+
+margin-left:0;
+margin-top:15px;
+
+}
+
+
+}
+
+
+</style>
+
 </head>
+
+
 <body>
-    <header id="header">
-        <div class="container">
-            <nav>
-                <a href="#" class="logo"><i class="fas fa-code"></i>Dumisani<span>Tukula</span></a>
-                <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="animate__animated animate__fadeInDown">Dumisani Tukula</h1>
-                <h2 class="animate__animated animate__fadeIn animate__delay-1s">Creative Designer, Developer & Digital Entrepreneur</h2>
-                <p class="animate__animated animate__fadeIn animate__delay-1-5s">Based in Blantyre, Malawi, I craft digital experiences that blend graphic design, front-end development, and innovative web solutions to tell stories and solve real-world problems.</p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn animate__animated animate__fadeInUp animate__delay-2s">View My Work</a>
-                    <a href="#contact" class="btn btn-outline animate__animated animate__fadeInUp animate__delay-2s">Hire Me</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <p>Get to know the person behind the work</p>
-            </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://i.ibb.co/Tq2HtCrC/PSX-20251004-064918.jpg" alt="Dumisani Tukula Portrait" loading="lazy">
-                </div>
-                <div class="about-text">
-                    <h3>Who Am I?</h3>
-                    <p>Hello! I'm Dumisani Tukula, a passionate Graphic Designer, Front-End Developer, and Digital Entrepreneur based in Blantyre, Malawi. With expertise in creating visually stunning designs and functional websites, I specialize in full-stack solutions using technologies like HTML, CSS, JavaScript, Node.js, Express, and MongoDB.</p>
-                    <p>My journey began at 17 with a love for visual storytelling and music creation. I've developed projects like MsikaOnline, an online marketplace, and Dynamité Digital, my professional brand showcasing skills in graphic design and web development. I also enjoy transforming ideas into reality, such as building community organization sites and unique dating platforms with futuristic themes.</p>
-                    <p>When not coding or designing, I'm making music, exploring photography, or collaborating on innovative projects. I believe in continuous learning and leveraging tools like Firebase and Postman to deliver high-quality, SEO-optimized digital experiences.</p>
-                    <div class="skills-list">
-                        <span class="skill-tag">Photography</span>
-                        <span class="skill-tag">Beat Making & Vocal Production</span>
-                        <span class="skill-tag">Graphic Design</span>
-                        <span class="skill-tag">Front-End Website Development</span>
-                        <span class="skill-tag">Writing & Typing</span>
-                    </div>
-                    <a href="https://i.ibb.co/mFD3MWXS/Black-and-Grey-Simple-Infographic-Resume-20260101-210124-0000.png" class="btn" download="Dumisani_Tukula_Resume.png">Download CV</a>
-                    <a href="#contact" class="btn btn-outline">Hire Me</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<header>
 
-    <section id="skills">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Skills</h2>
-                <p>The tools and technologies I use to bring ideas to life</p>
-            </div>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <i class="fas fa-camera"></i>
-                    <h3>Photography</h3>
-                    <p>Capturing stunning visuals and moments through professional photography techniques and editing.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-music"></i>
-                    <h3>Beat Making & Vocal Production</h3>
-                    <p>Creating original beats and producing vocals for music tracks and multimedia projects.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Graphic Design</h3>
-                    <p>Creating visually compelling designs for print and digital media that communicate brand messages effectively.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Front-End Website Development</h3>
-                    <p>Building responsive, interactive websites using HTML, CSS, JavaScript, and modern frameworks.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-pen"></i>
-                    <h3>Writing & Typing</h3>
-                    <p>Crafting compelling content and efficient typing for documentation, blogs, and professional communication.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="container">
 
-    <section id="stats">
-        <div class="container">
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-number" data-count="30">0</div>
-                    <div class="stat-text">Projects Completed</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="20">0</div>
-                    <div class="stat-text">Happy Clients</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="3">0</div>
-                    <div class="stat-text">Years Experience</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="7">0</div>
-                    <div class="stat-text">Awards Won</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<nav>
 
-    <section id="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Projects</h2>
-                <p>A selection of my recent creative work</p>
-            </div>
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="design">Design</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="branding">Branding</button>
-            </div>
-            <div class="projects-container">
-                <div class="project-card" data-category="web">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="MsikaOnline Marketplace Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-link"></i></a>
-                                <a href="#"><i class="fas fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>MsikaOnline</h3>
-                        <p>An online marketplace platform with frontend and backend integration, including user authentication via Google OAuth.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Full-Stack</span>
-                            <span class="project-tag">Node.js</span>
-                            <span class="project-tag">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="web">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Dynamité Digital Website Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-link"></i></a>
-                                <a href="#"><i class="fas fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Dynamité Digital</h3>
-                        <p>A professional website showcasing graphic design, front-end development, and music creation services with a mystical teal theme.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Web Development</span>
-                            <span class="project-tag">Graphic Design</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="design">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Mzimu Love Dating Site Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-link"></i></a>
-                                <a href="#"><i class="fas fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Mzimu Love</h3>
-                        <p>A futuristic Malawian dating website with neon gradients, cultural elements, and smooth animations.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">UI/UX</span>
-                            <span class="project-tag">Web Design</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="web">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Youth Focus Community Organization Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-link"></i></a>
-                                <a href="#"><i class="fas fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Youth Focus Community Organization</h3>
-                        <p>A website for a youth-focused community organization, highlighting events, resources, and engagement tools.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Web Development</span>
-                            <span class="project-tag">Community</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="branding">
-                    <div class="project-img">
-                        <img src="https://i.ibb.co/XZpyHTL/Screenshot-20251021-132126.png" alt="Biomedical Lab Profile Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-link"></i></a>
-                                <a href="#"><i class="fas fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Biomedical Lab Profile</h3>
-                        <p>Transformed a company profile from dental to biomedical lab focus, updating content, logos, and images for coherence.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Branding</span>
-                            <span class="project-tag">Content Adaptation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="design">
-                    <div class="project-img">
-                        <img src="https://i.ibb.co/k6XsmR9/Screenshot-20251017-151218.png" alt="WhatsApp Interface Replica Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-link"></i></a>
-                                <a href="#"><i class="fas fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>WhatsApp Interface Replica</h3>
-                        <p>An exact replica of the WhatsApp interface with dark theme, responsive layout, and detailed styling.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">UI Design</span>
-                            <span class="project-tag">CSS</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="design">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Dynamité Graphix Portfolio" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://drmarcus-dm.github.io/Dynamit--Graphix-Graphic-Designing-portfolio-/" target="_blank"><i class="fas fa-link"></i></a>
-                                <a href="#"><i class="fas fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Dynamité Graphix</h3>
-                        <p>Creative Graphic Designer from Malawi specializing in logo designs, poster art, and digital illustrations.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Graphic Design</span>
-                            <span class="project-tag">Portfolio</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<a class="logo" href="#">
+Dumisani<span>Tukula</span>
+</a>
 
-    <section id="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Client Testimonials</h2>
-                <p>What people say about my work</p>
-            </div>
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>Dumisani transformed our brand identity completely. His attention to detail and creative vision resulted in a design that perfectly represents our company values. The website he built has significantly increased our online engagement.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson Portrait" loading="lazy">
-                        </div>
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>CEO, TechSolutions</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>Working with Dumisani on our marketplace project was a game-changer. His full-stack expertise and innovative approach delivered a seamless user experience.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe Portrait" loading="lazy">
-                        </div>
-                        <div class="author-info">
-                            <h4>John Doe</h4>
-                            <p>Founder, Startup Inc.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>The futuristic design for our dating site exceeded expectations. Dumisani's blend of cultural elements and modern tech is unmatched.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Smith Portrait" loading="lazy">
-                        </div>
-                        <div class="author-info">
-                            <h4>Emily Smith</h4>
-                            <p>Marketing Director, LoveCo</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Let's create something amazing together</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>I'm currently available for freelance projects or full-time positions. If you have a project you'd like to discuss or just want to say hello, feel free to reach out!</p>
-                    <div class="contact-details">
-                        <div><i class="fas fa-map-marker-alt"></i><span>Blantyre, Malawi</span></div>
-                        <div><i class="fas fa-envelope"></i><span>dumisanitukula@gmail.com</span></div>
-                        <div><i class="fas fa-phone-alt"></i><a href="https://wa.me/265994768244" target="_blank" rel="noopener noreferrer">+265 994 768 244</a></div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/dumisani-tukula-480325357" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://x.com/DumisaniTukula" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/dumisanitukula" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/dumisanitukula02" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                </div>
-                <div class="contact-email">
-                    <h3 style="color: var(--primary);">Send Me an Email</h3>
-                    <p>Click the button below to open your email client and send a message directly.</p>
-                    <a href="mailto:dumisanitukula@gmail.com" class="btn">Send Email</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="menu">
+<i class="fas fa-bars"></i>
+</div>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Dumisani<span>Tukula</span></div>
-                <div class="footer-links">
-                    <a href="#hero">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/dumisani-tukula-480325357" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://x.com/DumisaniTukula" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.instagram.com/dumisanitukula" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/dumisanitukula02" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <div class="copyright">
-                    <p>&copy; <span id="year"></span> Dumisani Tukula. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
-    <a href="#hero" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+<ul class="nav-links">
 
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
+<li><a href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
 
-        document.getElementById('year').textContent = new Date().getFullYear();
+</ul>
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    navLinks.classList.remove('active');
-                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-            });
-        });
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
+</nav>
 
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 100);
-            document.getElementById('backToTop').classList.toggle('active', window.scrollY > 300);
-        });
+</div>
 
-        const counters = document.querySelectorAll('.stat-number');
-        const speed = 200;
-        function animateCounters() {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-count');
-                const count = +counter.innerText;
-                const increment = target / speed;
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
+</header>
 
-        const statsSection = document.getElementById('stats');
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                animateCounters();
-                observer.unobserve(statsSection);
-            }
-        }, { threshold: 0.5 });
-        observer.observe(statsSection);
 
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                const filterValue = button.getAttribute('data-filter');
-                projectCards.forEach(card => {
-                    card.style.display = (filterValue === 'all' || card.getAttribute('data-category') === filterValue) ? 'block' : 'none';
-                });
-            });
-        });
 
-        const animateElements = document.querySelectorAll('.about-content, .skill-card, .project-card, .testimonial-card');
-        const animateOnScroll = () => {
-            animateElements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
-        animateElements.forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(50px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-    </script>
+
+<!-- HERO -->
+
+
+<section id="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+
+<h1>
+DUMISANI TUKULA
+</h1>
+
+
+<h2>
+Founder • Designer • Developer • Digital Creator
+</h2>
+
+
+<p>
+
+I create powerful digital experiences by combining
+<strong>creative design, technology, artificial intelligence,
+and innovation.</strong>
+
+From Malawi to the world, I build brands, websites and
+solutions that turn ideas into reality.
+
+</p>
+
+
+<a href="#projects" class="btn">
+Explore My Work
+</a>
+
+
+<a href="#contact" class="btn btn-outline">
+Hire Me
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- ABOUT -->
+
+
+<section id="about">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+My Story
+</h2>
+
+</div>
+
+
+
+<div class="about-grid">
+
+
+<div>
+
+<img class="profile"
+src="https://i.ibb.co/Tq2HtCrC/PSX-20251004-064918.jpg"
+alt="Dumisani Tukula">
+
+
+</div>
+
+
+
+<div class="about-text">
+
+
+<h3>
+Creative Mind. <span class="highlight">Scientific Vision.</span>
+</h3>
+
+
+<p>
+
+I am <strong>Dumisani Tukula</strong>, a Malawian
+creative technologist, graphic designer, front-end developer
+and founder of <strong>Dynamité Graphix</strong>.
+
+</p>
+
+
+<p>
+
+My journey combines creativity and science.
+While studying Biomedical Sciences, I continue building
+digital solutions through design, programming and AI.
+
+</p>
+
+
+<p>
+
+My mission is simple:
+to transform ideas into meaningful experiences using
+technology, creativity and innovation.
+
+</p>
+
+
+
+<div class="tags">
+
+<span class="tag">Graphic Design</span>
+<span class="tag">Web Development</span>
+<span class="tag">AI Solutions</span>
+<span class="tag">UI/UX</span>
+<span class="tag">Branding</span>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- SERVICES -->
+
+
+<section id="services">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+What I Do
+</h2>
+
+</div>
+
+
+
+<div class="service-grid">
+
+
+<div class="service-card">
+
+<i class="fas fa-palette"></i>
+
+<h3>
+Dynamité Graphix
+</h3>
+
+<p>
+Professional visual branding and creative design services.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">Logos</span>
+<span class="tag">Posters</span>
+<span class="tag">Flyers</span>
+<span class="tag">Photo Editing</span>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="service-card">
+
+<i class="fas fa-code"></i>
+
+<h3>
+Dynamité Technologies
+</h3>
+
+<p>
+Modern websites and digital solutions for businesses.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">Websites</span>
+<span class="tag">AI Chatbots</span>
+<span class="tag">Automation</span>
+<span class="tag">IT Support</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="service-card">
+
+<i class="fas fa-brain"></i>
+
+<h3>
+AI Innovation
+</h3>
+
+
+<p>
+Using artificial intelligence to improve creativity,
+productivity and digital experiences.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">AI Design</span>
+<span class="tag">Automation</span>
+<span class="tag">Solutions</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS SECTION -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="section-title">
+<h2>My Expertise</h2>
+</div>
+
+
+<div class="skills-wrapper">
+
+
+<div class="skill-box">
+
+<i class="fas fa-paint-brush"></i>
+
+<h3>Graphic Design</h3>
+
+<p>
+Creating powerful visual identities, posters, logos and digital artwork that communicate brands effectively.
+</p>
+
+
+<div class="progress">
+
+<div class="progress-title">
+<span>Brand Design</span>
+<span>95%</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:95%"></div>
+</div>
+
+</div>
+
+
+
+<div class="progress">
+
+<div class="progress-title">
+<span>Photo Manipulation</span>
+<span>90%</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:90%"></div>
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="skill-box">
+
+<i class="fas fa-laptop-code"></i>
+
+<h3>Web Development</h3>
+
+
+<p>
+Building responsive websites with modern technologies and user-focused experiences.
+</p>
+
+
+
+<div class="progress">
+
+<div class="progress-title">
+<span>HTML/CSS</span>
+<span>95%</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:95%"></div>
+</div>
+
+</div>
+
+
+
+<div class="progress">
+
+<div class="progress-title">
+<span>JavaScript</span>
+<span>80%</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:80%"></div>
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="skill-box">
+
+
+<i class="fas fa-robot"></i>
+
+<h3>AI & Digital Solutions</h3>
+
+
+<p>
+Integrating artificial intelligence into creative workflows and business solutions.
+</p>
+
+
+
+<div class="progress">
+
+<div class="progress-title">
+<span>AI Tools</span>
+<span>90%</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:90%"></div>
+</div>
+
+</div>
+
+
+
+<div class="progress">
+
+<div class="progress-title">
+<span>Automation</span>
+<span>75%</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:75%"></div>
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- PROJECTS SECTION -->
+
+
+<section id="projects">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+Featured Projects
+</h2>
+
+<p>
+A showcase of creativity, technology and innovation.
+</p>
+
+</div>
+
+
+
+<div class="project-grid">
+
+
+
+
+
+<div class="project-card">
+
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+
+
+<div class="project-content">
+
+<h3>
+Dynamité Graphix
+</h3>
+
+
+<p>
+A professional creative studio focused on branding,
+poster design, logo creation and digital artwork.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">
+Branding
+</span>
+
+<span class="tag">
+Graphic Design
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="project-card">
+
+
+<img src="https://images.unsplash.com/photo-1559028012-481c04fa702d">
+
+
+<div class="project-content">
+
+
+<h3>
+MsikaOnline Marketplace
+</h3>
+
+
+<p>
+A digital marketplace platform designed to connect buyers
+and sellers through modern web technology.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">
+Web App
+</span>
+
+<span class="tag">
+Full Stack
+</span>
+
+
+<span class="tag">
+Database
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="project-card">
+
+
+<img src="https://images.unsplash.com/photo-1558655146-d09347e92766">
+
+
+<div class="project-content">
+
+
+<h3>
+Dynamité Technologies
+</h3>
+
+
+<p>
+A technology brand delivering websites,
+AI solutions and digital transformation services.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">
+Development
+</span>
+
+<span class="tag">
+AI
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="project-card">
+
+
+<img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c">
+
+
+<div class="project-content">
+
+
+<h3>
+Biomedical Science Portfolio
+</h3>
+
+
+<p>
+Combining medical knowledge and technology to create
+educational and scientific digital experiences.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">
+Biomedical
+</span>
+
+<span class="tag">
+Science
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- PRICING SECTION -->
+
+
+<section id="pricing">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+Service Packages
+</h2>
+
+
+<p>
+Affordable professional solutions for individuals and businesses.
+</p>
+
+
+</div>
+
+
+
+
+<div class="pricing-grid">
+
+
+
+
+
+<div class="price-card">
+
+
+<h3>
+Starter Design
+</h3>
+
+
+<div class="price">
+$7
+</div>
+
+
+<p>
+Perfect for personal brands and small businesses.
+</p>
+
+
+<ul>
+
+<li>✔ Poster Design</li>
+<li>✔ Social Media Flyer</li>
+<li>✔ Basic Logo Design</li>
+<li>✔ One Revision</li>
+
+</ul>
+
+
+<a href="#contact" class="btn">
+Choose Plan
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="price-card featured">
+
+
+<h3>
+Business Branding
+</h3>
+
+
+<div class="price">
+Custom
+</div>
+
+
+<p>
+Complete identity development for growing businesses.
+</p>
+
+
+<ul>
+
+<li>✔ Professional Logo</li>
+<li>✔ Brand Colors</li>
+<li>✔ Marketing Materials</li>
+<li>✔ Business Profile</li>
+
+</ul>
+
+
+<a href="#contact" class="btn">
+Get Started
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="price-card">
+
+
+<h3>
+Website Development
+</h3>
+
+
+<div class="price">
+Custom
+</div>
+
+
+<p>
+Modern websites built for businesses and organizations.
+</p>
+
+
+<ul>
+
+<li>✔ Responsive Website</li>
+<li>✔ SEO Setup</li>
+<li>✔ Contact System</li>
+<li>✔ Maintenance Support</li>
+
+
+</ul>
+
+
+<a href="#contact" class="btn">
+Build Website
+</a>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- AI SECTION -->
+
+
+<section id="ai">
+
+
+<div class="container">
+
+
+<div class="ai-box">
+
+
+<div>
+
+<h2>
+Artificial Intelligence Meets Creativity
+</h2>
+
+
+<p>
+
+I use AI as a powerful creative partner to accelerate
+design, content creation, automation and problem solving.
+
+</p>
+
+
+<div class="tags">
+
+<span class="tag">
+AI Design
+</span>
+
+<span class="tag">
+AI Chatbots
+</span>
+
+<span class="tag">
+Automation
+</span>
+
+<span class="tag">
+Creative AI
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<i class="fas fa-microchip ai-icon"></i>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- BIOMEDICAL SECTION -->
+
+
+<section id="science">
+
+
+<div class="container">
+
+
+<div class="science-grid">
+
+
+<div>
+
+
+<h2>
+Science + Technology
+</h2>
+
+
+<p>
+
+Beyond creativity, I am a Biomedical Sciences student
+with a passion for medicine, innovation and technology.
+
+</p>
+
+
+<p>
+
+My vision is to combine healthcare knowledge with
+digital solutions to create meaningful impact.
+
+</p>
+
+
+<div class="tags">
+
+<span class="tag">
+Biomedical Sciences
+</span>
+
+<span class="tag">
+Healthcare Technology
+</span>
+
+<span class="tag">
+Medical Innovation
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="science-card">
+
+<i class="fas fa-flask"></i>
+
+<h3>
+Future Vision
+</h3>
+
+
+<p>
+
+Building bridges between healthcare,
+science and emerging technologies.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<style>
+
+
+/* PART 2 CSS */
+
+
+#skills,
+#pricing,
+#science{
+
+background:#0b0b0b;
+
+}
+
+
+
+.skills-wrapper{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.skill-box{
+
+background:#151515;
+padding:35px;
+border-radius:20px;
+border:1px solid #222;
+
+}
+
+
+
+.skill-box i{
+
+font-size:45px;
+color:#00bfff;
+
+margin-bottom:20px;
+
+}
+
+
+
+.progress{
+
+margin-top:25px;
+
+}
+
+
+.progress-title{
+
+display:flex;
+justify-content:space-between;
+margin-bottom:8px;
+
+}
+
+
+.bar{
+
+height:8px;
+background:#222;
+border-radius:20px;
+overflow:hidden;
+
+}
+
+
+.fill{
+
+height:100%;
+background:linear-gradient(
+90deg,
+#b31313,
+#00bfff
+);
+
+}
+
+
+
+
+
+.project-grid{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.project-card{
+
+background:#111;
+border-radius:20px;
+overflow:hidden;
+
+transition:.4s;
+
+}
+
+
+
+.project-card:hover{
+
+transform:translateY(-15px);
+
+}
+
+
+
+.project-card img{
+
+width:100%;
+height:230px;
+object-fit:cover;
+
+}
+
+
+
+.project-content{
+
+padding:25px;
+
+}
+
+
+
+
+
+.pricing-grid{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.price-card{
+
+background:#151515;
+padding:40px;
+border-radius:20px;
+text-align:center;
+
+}
+
+
+
+.price-card.featured{
+
+border:2px solid #00bfff;
+
+transform:scale(1.05);
+
+}
+
+
+
+.price{
+
+font-size:45px;
+color:#00bfff;
+font-weight:900;
+
+margin:20px;
+
+}
+
+
+
+.price-card ul{
+
+list-style:none;
+line-height:2.2;
+
+}
+
+
+
+
+.ai-box{
+
+padding:50px;
+
+background:
+linear-gradient(
+135deg,
+#1a0000,
+#001b2b
+);
+
+border-radius:30px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+
+
+.ai-icon{
+
+font-size:100px;
+color:#00bfff;
+
+}
+
+
+
+
+.science-grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+
+}
+
+
+
+.science-card{
+
+padding:40px;
+background:#151515;
+border-radius:25px;
+text-align:center;
+
+}
+
+
+
+.science-card i{
+
+font-size:70px;
+color:#b31313;
+
+}
+
+
+
+@media(max-width:768px){
+
+.science-grid,
+.ai-box{
+
+grid-template-columns:1fr;
+display:block;
+
+}
+
+
+.price-card.featured{
+
+transform:none;
+
+}
+
+
+}
+
+
+</style>
+
+<!-- TESTIMONIALS -->
+
+<section id="testimonials">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+Client Reviews
+</h2>
+
+<p>
+Trust built through creativity and quality.
+</p>
+
+</div>
+
+
+
+<div class="testimonial-grid">
+
+
+
+<div class="testimonial">
+
+<i class="fas fa-quote-left"></i>
+
+<p>
+Dumisani delivered an amazing design that transformed
+our brand identity. His creativity and attention to detail
+are outstanding.
+</p>
+
+
+<h3>
+Business Client
+</h3>
+
+
+<span>
+Brand Owner
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="testimonial">
+
+<i class="fas fa-quote-left"></i>
+
+<p>
+His combination of technology and creativity makes him
+different. He understands ideas and turns them into reality.
+</p>
+
+
+<h3>
+Digital Partner
+</h3>
+
+
+<span>
+Entrepreneur
+</span>
+
+
+</div>
+
+
+
+
+
+
+<div class="testimonial">
+
+<i class="fas fa-quote-left"></i>
+
+<p>
+Professional work, fast communication and excellent
+results. Highly recommended for digital projects.
+</p>
+
+
+<h3>
+Creative Client
+</h3>
+
+
+<span>
+Organization
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- CONTACT -->
+
+
+<section id="contact">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+Let's Work Together
+</h2>
+
+
+<p>
+Have an idea? Let's transform it into reality.
+</p>
+
+</div>
+
+
+
+
+<div class="contact-grid">
+
+
+
+<div>
+
+
+<h2>
+Dumisani Tukula
+</h2>
+
+
+<p>
+
+Founder of <strong>Dynamité Graphix</strong> and
+digital creator helping individuals, businesses and
+organizations build powerful online identities.
+
+</p>
+
+
+
+
+<div class="contact-item">
+
+<i class="fas fa-location-dot"></i>
+
+<span>
+Blantyre, Malawi
+</span>
+
+</div>
+
+
+
+
+<div class="contact-item">
+
+<i class="fas fa-envelope"></i>
+
+<span>
+dumisanitukula@gmail.com
+</span>
+
+</div>
+
+
+
+
+
+<div class="contact-item">
+
+<i class="fas fa-phone"></i>
+
+<span>
++265 994 768 244
+</span>
+
+</div>
+
+
+
+
+
+<div class="social">
+
+
+<a href="#">
+<i class="fab fa-facebook"></i>
+</a>
+
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+
+<a href="#">
+<i class="fab fa-linkedin"></i>
+</a>
+
+
+<a href="#">
+<i class="fab fa-x-twitter"></i>
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="contact-box">
+
+
+<h3>
+Send A Message
+</h3>
+
+
+<p>
+Click below to contact me directly.
+</p>
+
+
+<a class="btn"
+href="mailto:dumisanitukula@gmail.com">
+
+Email Me
+
+</a>
+
+
+<br><br>
+
+
+<a class="btn"
+href="https://wa.me/265994768244">
+
+WhatsApp
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+<footer>
+
+
+<div class="container">
+
+
+<h2>
+Dumisani<span>Tukula</span>
+</h2>
+
+
+<p>
+Design • Technology • Innovation
+</p>
+
+
+
+<div class="footer-links">
+
+<a href="#hero">
+Home
+</a>
+
+<a href="#about">
+About
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#projects">
+Projects
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+
+</div>
+
+
+
+
+<p class="copyright">
+
+© <span id="year"></span>
+Dumisani Tukula.
+All Rights Reserved.
+
+</p>
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+
+<!-- FLOATING BUTTONS -->
+
+
+<a href="https://wa.me/265994768244"
+class="whatsapp"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+
+
+
+<button id="theme">
+
+<i class="fas fa-moon"></i>
+
+</button>
+
+
+
+
+
+
+<style>
+
+
+/* FINAL CSS */
+
+
+#testimonials{
+
+background:#050505;
+
+}
+
+
+
+.testimonial-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.testimonial{
+
+background:#151515;
+
+padding:35px;
+
+border-radius:20px;
+
+border:1px solid #222;
+
+transition:.4s;
+
+}
+
+
+
+.testimonial:hover{
+
+transform:translateY(-10px);
+
+border-color:#00bfff;
+
+}
+
+
+
+.testimonial i{
+
+font-size:40px;
+
+color:#b31313;
+
+}
+
+
+
+.testimonial span{
+
+color:#888;
+
+}
+
+
+
+
+
+#contact{
+
+background:#0b0b0b;
+
+}
+
+
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+
+
+.contact-item{
+
+display:flex;
+
+gap:15px;
+
+margin:25px 0;
+
+align-items:center;
+
+}
+
+
+
+.contact-item i{
+
+color:#00bfff;
+
+font-size:25px;
+
+}
+
+
+
+.social{
+
+display:flex;
+
+gap:15px;
+
+}
+
+
+
+.social a{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#151515;
+
+color:white;
+
+font-size:20px;
+
+transition:.3s;
+
+}
+
+
+
+.social a:hover{
+
+background:#00bfff;
+
+}
+
+
+
+.contact-box{
+
+background:#151515;
+
+padding:45px;
+
+border-radius:25px;
+
+text-align:center;
+
+}
+
+
+
+
+footer{
+
+padding:50px 0;
+
+background:#000;
+
+text-align:center;
+
+}
+
+
+
+footer h2{
+
+font-size:35px;
+
+}
+
+
+
+footer span{
+
+color:#b31313;
+
+}
+
+
+
+.footer-links{
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+margin:30px;
+
+}
+
+
+
+.footer-links a{
+
+color:#aaa;
+
+text-decoration:none;
+
+}
+
+
+
+.copyright{
+
+color:#666;
+
+}
+
+
+
+
+
+.whatsapp{
+
+position:fixed;
+
+right:30px;
+
+bottom:30px;
+
+width:60px;
+
+height:60px;
+
+background:#25d366;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+font-size:35px;
+
+z-index:999;
+
+box-shadow:0 10px 30px #000;
+
+}
+
+
+
+
+
+#theme{
+
+position:fixed;
+
+left:30px;
+
+bottom:30px;
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+border:none;
+
+background:#00bfff;
+
+color:white;
+
+font-size:20px;
+
+cursor:pointer;
+
+z-index:999;
+
+}
+
+
+
+body.light{
+
+background:white;
+
+color:#111;
+
+}
+
+
+body.light section{
+
+background:white;
+
+color:#111;
+
+}
+
+
+
+@media(max-width:768px){
+
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.whatsapp{
+
+right:20px;
+
+bottom:20px;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+
+
+
+
+<script>
+
+
+// YEAR
+
+document.getElementById("year").innerHTML =
+new Date().getFullYear();
+
+
+
+
+// MOBILE MENU
+
+
+const menu =
+document.querySelector(".menu");
+
+
+const nav =
+document.querySelector(".nav-links");
+
+
+menu.onclick=function(){
+
+nav.classList.toggle("active");
+
+};
+
+
+
+
+
+// DARK LIGHT MODE
+
+
+const theme =
+document.getElementById("theme");
+
+
+theme.onclick=function(){
+
+
+document.body.classList.toggle("light");
+
+
+if(document.body.classList.contains("light")){
+
+
+theme.innerHTML=
+'<i class="fas fa-sun"></i>';
+
+
+}else{
+
+
+theme.innerHTML=
+'<i class="fas fa-moon"></i>';
+
+}
+
+
+};
+
+
+
+
+
+
+// SCROLL ANIMATION
+
+
+const observer =
+new IntersectionObserver(entries=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
+
+}
+
+
+});
+
+
+});
+
+
+
+document.querySelectorAll(
+".service-card,.skill-box,.project-card,.testimonial,.price-card"
+)
+.forEach(el=>{
+
+
+el.style.opacity="0";
+
+el.style.transform="translateY(40px)";
+
+el.style.transition=
+"0.7s ease";
+
+
+observer.observe(el);
+
+
+});
+
+
+
+
+
+// CLOSE MOBILE MENU
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+
+link.onclick=()=>{
+
+nav.classList.remove("active");
+
+};
+
+
+});
+
+
+
+</script>
+
+
+
 </body>
+
 </html>
